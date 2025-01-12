@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 major = 1
-minor = 17
+minor = 19
 release = 7
 dev_suffix = "+dev" # either use "+dev", "-dev", "" (empty string) or None
 

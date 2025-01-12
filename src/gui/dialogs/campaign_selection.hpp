@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2009 - 2022
+	Copyright (C) 2009 - 2024
 	by Mark de Wever <koraq@xs4all.nl>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -16,7 +16,6 @@
 #pragma once
 
 #include "gui/dialogs/modal_dialog.hpp"
-#include "gui/widgets/text_box_base.hpp"
 
 #include "game_initialization/create_engine.hpp"
 
@@ -25,20 +24,6 @@
 namespace gui2::dialogs
 {
 
-/**
- * @ingroup GUIWindowDefinitionWML
- *
- * This shows the dialog which allows the user to choose which campaign to play.
- * Key               |Type             |Mandatory|Description
- * ------------------|-----------------|---------|-----------
- * campaign_list     | @ref listbox    |yes      |A listbox that contains all available campaigns.
- * icon              | @ref image      |no       |The icon for the campaign.
- * name              | control         |no       |The name of the campaign.
- * victory           | @ref image      |no       |The icon to show when the user finished the campaign. The engine determines whether or not the user has finished the campaign and sets the visible flag for the widget accordingly.
- * campaign_details  | @ref multi_page |yes      |A multi page widget that shows more details for the selected campaign.
- * image             | @ref image      |no       |The image for the campaign.
- * description       | control         |no       |The description of the campaign.
- */
 class campaign_selection : public modal_dialog
 {
 	enum CAMPAIGN_ORDER {RANK, DATE, NAME};
@@ -56,6 +41,9 @@ public:
 		RNG_BIASED,
 	};
 
+	//return value for opening addon manager
+	const static int OPEN_ADDON_MANAGER = 3;
+
 	explicit campaign_selection(ng::create_engine& eng)
 		: modal_dialog(window_id())
 		, engine_(eng)
@@ -67,6 +55,7 @@ public:
 		, current_difficulty_()
 		, current_sorting_(RANK)
 		, currently_sorted_asc_(true)
+		, mod_ids_()
 	{
 	}
 
@@ -96,9 +85,9 @@ private:
 
 	virtual const std::string& window_id() const override;
 
-	virtual void pre_show(window& window) override;
+	virtual void pre_show() override;
 
-	virtual void post_show(window& window) override;
+	void proceed();
 
 	void sort_campaigns(CAMPAIGN_ORDER order, bool ascending);
 
@@ -131,6 +120,11 @@ private:
 	bool currently_sorted_asc_;
 
 	std::vector<std::string> last_search_words_;
+
+	inline const static std::string missing_campaign_ = "////missing-campaign////";
+	inline const static std::string addons_ = "////addons////";
+
+	std::vector<std::string> mod_ids_;
 };
 
 } // namespace dialogs

@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2022
+	Copyright (C) 2014 - 2024
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -20,12 +20,9 @@
 
 #include "movetype.hpp"
 
-#include "game_board.hpp"
 #include "game_config_manager.hpp"
 #include "log.hpp"
-#include "map/map.hpp"
 #include "terrain/translation.hpp"
-#include "units/types.hpp" // for attack_type
 
 static lg::log_domain log_config("config");
 #define ERR_CF LOG_STREAM(err, log_config)
@@ -172,13 +169,13 @@ bool movetype::terrain_info::data::config_has_changes(const config & new_values,
                                                       bool overwrite) const
 {
 	if ( overwrite ) {
-		for (const config::attribute & a : new_values.attribute_range())
-			if ( a.second != cfg_[a.first] )
+		for (const auto& [key, value] : new_values.attribute_range())
+			if ( value != cfg_[key] )
 				return true;
 	}
 	else {
-		for (const config::attribute & a : new_values.attribute_range())
-			if ( a.second.to_int() != 0 )
+		for(const auto& [_, value] : new_values.attribute_range())
+			if ( value.to_int() != 0 )
 				return true;
 	}
 
@@ -205,15 +202,15 @@ void movetype::terrain_info::data::merge(const config & new_values, bool overwri
 		// change "merge_attributes" to "merge_with".)
 		cfg_.merge_attributes(new_values);
 	else {
-		for (const config::attribute & a : new_values.attribute_range()) {
-			config::attribute_value & dest = cfg_[a.first];
+		for(const auto& [new_key, new_value] : new_values.attribute_range()) {
+			config::attribute_value & dest = cfg_[new_key];
 			int old = dest.to_int(params_.max_value);
 
 			// The new value is the absolute value of the old plus the
 			// provided value, capped between minimum and maximum, then
 			// given the sign of the old value.
 			// (Think defenses for why we might have negative values.)
-			int value = std::abs(old) + a.second.to_int(0);
+			int value = std::abs(old) + new_value.to_int(0);
 			value = std::max(params_.min_value, std::min(value, params_.max_value));
 			if ( old < 0 )
 				value = -value;
@@ -724,28 +721,18 @@ void movetype::terrain_defense::merge(const config & new_data, bool overwrite)
 
 
 /**
- * Returns a map from attack types to resistances.
+ * Returns a map from damage types to resistances.
  */
 utils::string_map_res movetype::resistances::damage_table() const
 {
 	utils::string_map_res result;
 
-	for (const config::attribute & attrb : cfg_.attribute_range()) {
-		result[attrb.first] = attrb.second;
+	for(const auto& [key, value] : cfg_.attribute_range()) {
+		result[key] = value;
 	}
 
 	return result;
 }
-
-
-/**
- * Returns the resistance against the indicated attack.
- */
-int movetype::resistances::resistance_against(const attack_type & attack) const
-{
-	return cfg_[attack.type()].to_int(100);
-}
-
 
 /**
  * Returns the resistance against the indicated damage type.
@@ -768,9 +755,9 @@ void movetype::resistances::merge(const config & new_data, bool overwrite)
 		// change "merge_attributes" to "merge_with".)
 		cfg_.merge_attributes(new_data);
 	else
-		for (const config::attribute & a : new_data.attribute_range()) {
-			config::attribute_value & dest = cfg_[a.first];
-			dest = std::max(0, dest.to_int(100) + a.second.to_int(0));
+		for(const auto& [key, value] : new_data.attribute_range()) {
+			config::attribute_value & dest = cfg_[key];
+			dest = std::max(0, dest.to_int(100) + value.to_int(0));
 		}
 }
 
@@ -868,10 +855,6 @@ bool movetype::has_terrain_defense_caps(const std::set<t_translation::terrain_co
 	return false;
 }
 
-/**
- * Merges the given config over the existing data.
- * If @a overwrite is false, the new values will be added to the old.
- */
 void movetype::merge(const config & new_cfg, bool overwrite)
 {
 	for (const auto & applies_to : movetype::effects) {
@@ -916,10 +899,7 @@ void movetype::merge(const config & new_cfg, const std::string & applies_to, boo
 const std::set<std::string> movetype::effects {"movement_costs",
 	"vision_costs", "jamming_costs", "defense", "resistance"};
 
-/**
- * Writes the movement type data to the provided config.
- */
-void movetype::write(config & cfg) const
+void movetype::write(config& cfg, bool include_notes) const
 {
 	movement_.write(cfg, "movement_costs", false);
 	vision_.write(cfg, "vision_costs", false);
@@ -927,10 +907,12 @@ void movetype::write(config & cfg) const
 	defense_.write(cfg, "defense");
 	resist_.write(cfg, "resistance");
 
-	if ( flying_ )
+	if(flying_)
 		cfg["flying"] = true;
 
-	for(const auto& note : special_notes_) {
-		cfg.add_child("special_note", config{"note", note});
+	if(include_notes) {
+		for(const auto& note : special_notes_) {
+			cfg.add_child("special_note", config{"note", note});
+		}
 	}
 }

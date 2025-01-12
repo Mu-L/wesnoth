@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2008 - 2022
+	Copyright (C) 2008 - 2024
 	by Thomas Baumhauer <thomas.baumhauer@NOSPAMgmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -17,6 +17,7 @@
 
 #include "server/common/forum_user_handler.hpp"
 #include "server/wesnothd/server.hpp"
+#include "serialization/chrono.hpp"
 #include "hash.hpp"
 #include "log.hpp"
 #include "config.hpp"
@@ -99,7 +100,8 @@ std::string fuh::extract_salt(const std::string& name) {
 }
 
 void fuh::user_logged_in(const std::string& name) {
-	conn_.write_user_int("user_lastvisit", name, static_cast<int>(std::time(nullptr)));
+	auto now = chrono::serialize_timestamp(std::chrono::system_clock::now());
+	conn_.write_user_int("user_lastvisit", name, static_cast<int>(now));
 }
 
 bool fuh::user_exists(const std::string& name) {
@@ -156,14 +158,15 @@ std::string fuh::user_info(const std::string& name) {
 		throw error("No user with the name '" + name + "' exists.");
 	}
 
-	std::time_t reg_date = get_registrationdate(name);
-	std::time_t ll_date = get_lastlogin(name);
+	auto reg_date = get_registrationdate(name);
+	auto ll_date = get_lastlogin(name);
 
-	std::string reg_string = ctime(&reg_date);
+	static constexpr std::string_view format = "%a %b %d %T %Y"; // equivalent to std::ctime
+	std::string reg_string = chrono::format_local_timestamp(reg_date, format);
 	std::string ll_string;
 
-	if(ll_date) {
-		ll_string = ctime(&ll_date);
+	if(ll_date > decltype(ll_date){}) {
+		ll_string = chrono::format_local_timestamp(ll_date, format);
 	} else {
 		ll_string = "Never\n";
 	}
@@ -191,12 +194,12 @@ void fuh::db_update_addon_download_count(const std::string& instance_version, co
 	return conn_.update_addon_download_count(instance_version, id, version);
 }
 
-std::time_t fuh::get_lastlogin(const std::string& user) {
-	return std::time_t(conn_.get_user_int(db_extra_table_, "user_lastvisit", user));
+std::chrono::system_clock::time_point fuh::get_lastlogin(const std::string& user) {
+	return chrono::parse_timestamp(conn_.get_user_int(db_extra_table_, "user_lastvisit", user));
 }
 
-std::time_t fuh::get_registrationdate(const std::string& user) {
-	return std::time_t(conn_.get_user_int(db_users_table_, "user_regdate", user));
+std::chrono::system_clock::time_point fuh::get_registrationdate(const std::string& user) {
+	return chrono::parse_timestamp(conn_.get_user_int(db_users_table_, "user_regdate", user));
 }
 
 std::string fuh::get_uuid(){
@@ -207,10 +210,10 @@ std::string fuh::get_tournaments(){
 	return conn_.get_tournaments();
 }
 
-void fuh::async_get_and_send_game_history(boost::asio::io_service& io_service, wesnothd::server& s, wesnothd::player_iterator player, int player_id, int offset) {
-	boost::asio::post([this, &s, player, player_id, offset, &io_service] {
-		boost::asio::post(io_service, [player, &s, doc = conn_.get_game_history(player_id, offset)]{
-			s.send_to_player(player, *doc);
+void fuh::async_get_and_send_game_history(boost::asio::io_context& io_service, wesnothd::server& s, any_socket_ptr socket, int player_id, int offset, std::string& search_game_name, int search_content_type, std::string& search_content) {
+	boost::asio::post([this, &s, socket, player_id, offset, &io_service, search_game_name, search_content_type, search_content] {
+		boost::asio::post(io_service, [socket, &s, doc = conn_.get_game_history(player_id, offset, search_game_name, search_content_type, search_content)]{
+			s.send_to_player(socket, *doc);
 		});
 	 });
 }
@@ -223,19 +226,19 @@ void fuh::db_update_game_end(const std::string& uuid, int game_id, const std::st
 	conn_.update_game_end(uuid, game_id, replay_location);
 }
 
-void fuh::db_insert_game_player_info(const std::string& uuid, int game_id, const std::string& username, int side_number, int is_host, const std::string& faction, const std::string& version, const std::string& source, const std::string& current_user){
-	conn_.insert_game_player_info(uuid, game_id, username, side_number, is_host, faction, version, source, current_user);
+void fuh::db_insert_game_player_info(const std::string& uuid, int game_id, const std::string& username, int side_number, int is_host, const std::string& faction, const std::string& version, const std::string& source, const std::string& current_user, const std::string& leaders){
+	conn_.insert_game_player_info(uuid, game_id, username, side_number, is_host, faction, version, source, current_user, leaders);
 }
 
-unsigned long long fuh::db_insert_game_content_info(const std::string& uuid, int game_id, const std::string& type, const std::string& name, const std::string& id, const std::string& source, const std::string& version){
-	return conn_.insert_game_content_info(uuid, game_id, type, name, id, source, version);
+unsigned long long fuh::db_insert_game_content_info(const std::string& uuid, int game_id, const std::string& type, const std::string& name, const std::string& id, const std::string& addon_id, const std::string& addon_version){
+	return conn_.insert_game_content_info(uuid, game_id, type, name, id, addon_id, addon_version);
 }
 
 void fuh::db_set_oos_flag(const std::string& uuid, int game_id){
 	conn_.set_oos_flag(uuid, game_id);
 }
 
-void fuh::async_test_query(boost::asio::io_service& io_service, int limit) {
+void fuh::async_test_query(boost::asio::io_context& io_service, int limit) {
 	boost::asio::post([this, limit, &io_service] {
 		ERR_UH << "async test query starts!";
 		int i = conn_.async_test_query(limit);
@@ -247,8 +250,8 @@ bool fuh::db_topic_id_exists(int topic_id) {
 	return conn_.topic_id_exists(topic_id);
 }
 
-void fuh::db_insert_addon_info(const std::string& instance_version, const std::string& id, const std::string& name, const std::string& type, const std::string& version, bool forum_auth, int topic_id) {
-	conn_.insert_addon_info(instance_version, id, name, type, version, forum_auth, topic_id);
+void fuh::db_insert_addon_info(const std::string& instance_version, const std::string& id, const std::string& name, const std::string& type, const std::string& version, bool forum_auth, int topic_id, const std::string uploader) {
+	conn_.insert_addon_info(instance_version, id, name, type, version, forum_auth, topic_id, uploader);
 }
 
 unsigned long long fuh::db_insert_login(const std::string& username, const std::string& ip, const std::string& version) {
@@ -265,6 +268,40 @@ void fuh::get_users_for_ip(const std::string& ip, std::ostringstream* out) {
 
 void fuh::get_ips_for_user(const std::string& username, std::ostringstream* out) {
 	conn_.get_ips_for_user(username, out);
+}
+
+bool fuh::db_is_user_primary_author(const std::string& instance_version, const std::string& id, const std::string& username) {
+	return conn_.is_user_author(instance_version, id, username, 1);
+}
+
+bool fuh::db_is_user_secondary_author(const std::string& instance_version, const std::string& id, const std::string& username) {
+	return conn_.is_user_author(instance_version, id, username, 0);
+}
+
+void fuh::db_delete_addon_authors(const std::string& instance_version, const std::string& id) {
+	conn_.delete_addon_authors(instance_version, id);
+}
+
+void fuh::db_insert_addon_authors(const std::string& instance_version, const std::string& id, const std::vector<std::string>& primary_authors, const std::vector<std::string>& secondary_authors) {
+	// ignore any duplicate authors
+	std::set<std::string> inserted_authors;
+
+	for(const std::string& primary_author : primary_authors) {
+		if(inserted_authors.count(primary_author) == 0) {
+			inserted_authors.emplace(primary_author);
+			conn_.insert_addon_author(instance_version, id, primary_author, 1);
+		}
+	}
+	for(const std::string& secondary_author : secondary_authors) {
+		if(inserted_authors.count(secondary_author) == 0) {
+			inserted_authors.emplace(secondary_author);
+			conn_.insert_addon_author(instance_version, id, secondary_author, 0);
+		}
+	}
+}
+
+bool fuh::db_do_any_authors_exist(const std::string& instance_version, const std::string& id) {
+	return conn_.do_any_authors_exist(instance_version, id);
 }
 
 #endif //HAVE_MYSQLPP

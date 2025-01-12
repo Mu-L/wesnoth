@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2022
+	Copyright (C) 2014 - 2024
 	by Chris Beck <render787@gmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -26,7 +26,6 @@
 
 #include "config.hpp"
 #include "scripting/push_check.hpp"
-#include "scripting/lua_unit.hpp"
 #include "tstring.hpp"                  // for t_string
 #include "variable.hpp" // for vconfig
 #include "log.hpp"
@@ -36,10 +35,8 @@
 
 #include <cstring>
 #include <iterator>                     // for distance, advance
-#include <new>                          // for operator new
 #include <string>                       // for string, basic_string
 
-#include "lua/lauxlib.h"
 
 static const char gettextKey[] = "gettext";
 static const char vconfigKey[] = "vconfig";
@@ -238,12 +235,12 @@ static int impl_vconfig_get(lua_State *L)
 	if (shallow_literal || strcmp(m, "__shallow_parsed") == 0)
 	{
 		lua_newtable(L);
-		for (const config::attribute &a : v->get_config().attribute_range()) {
+		for(const auto& [key, value] : v->get_config().attribute_range()) {
 			if (shallow_literal)
-				luaW_pushscalar(L, a.second);
+				luaW_pushscalar(L, value);
 			else
-				luaW_pushscalar(L, v->expand(a.first));
-			lua_setfield(L, -2, a.first.c_str());
+				luaW_pushscalar(L, v->expand(key));
+			lua_setfield(L, -2, key.c_str());
 		}
 		vconfig::all_children_iterator i = v->ordered_begin(),
 			i_end = v->ordered_end();
@@ -253,7 +250,7 @@ static int impl_vconfig_get(lua_State *L)
 		}
 		for (int j = 1; i != i_end; ++i, ++j)
 		{
-			lua_createtable(L, 2, 0);
+			luaW_push_namedtuple(L, {"tag", "contents"});
 			lua_pushstring(L, i.get_key().c_str());
 			lua_rawseti(L, -2, 1);
 			luaW_pushvconfig(L, i.get_child());
@@ -660,20 +657,20 @@ void luaW_filltable(lua_State *L, const config& cfg)
 		return;
 
 	int k = 1;
-	for (const config::any_child ch : cfg.all_children_range())
+	for(const auto [child_key, child_cfg] : cfg.all_children_view())
 	{
 		luaW_push_namedtuple(L, {"tag", "contents"});
-		lua_pushstring(L, ch.key.c_str());
+		lua_pushstring(L, child_key.c_str());
 		lua_rawseti(L, -2, 1);
 		lua_newtable(L);
-		luaW_filltable(L, ch.cfg);
+		luaW_filltable(L, child_cfg);
 		lua_rawseti(L, -2, 2);
 		lua_rawseti(L, -2, k++);
 	}
-	for (const config::attribute &attr : cfg.attribute_range())
+	for(const auto& [key, value] : cfg.attribute_range())
 	{
-		luaW_pushscalar(L, attr.second);
-		lua_setfield(L, -2, attr.first.c_str());
+		luaW_pushscalar(L, value);
+		lua_setfield(L, -2, key.c_str());
 	}
 }
 
@@ -723,7 +720,17 @@ void luaW_push_namedtuple(lua_State* L, const std::vector<std::string>& names)
 		{ nullptr, nullptr }
 	};
 	luaL_setfuncs(L, callbacks, 0);
-	lua_pushliteral(L, "named tuple");
+	static const char baseName[] = "named tuple";
+	std::ostringstream str;
+	str << baseName << '(';
+	if(!names.empty()) {
+		str << names[0];
+	}
+	for(size_t i = 1; i < names.size(); i++) {
+		str << ", " << names[i];
+	}
+	str << ')';
+	lua_push(L, str.str());
 	lua_setfield(L, -2, "__metatable");
 	lua_push(L, names);
 	lua_setfield(L, -2, "__names");
@@ -1116,9 +1123,12 @@ int luaW_pcall_internal(lua_State *L, int nArgs, int nRets)
 
 	int error_handler_index = lua_gettop(L) - nArgs - 1;
 
+	++lua_jailbreak_exception::jail_depth;
+
 	// Call the function.
 	int errcode = lua_pcall(L, nArgs, nRets, -2 - nArgs);
 
+	--lua_jailbreak_exception::jail_depth;
 	lua_jailbreak_exception::rethrow();
 
 	// Remove the error handler.
@@ -1140,6 +1150,8 @@ bool luaW_pcall(lua_State *L, int nArgs, int nRets, bool allow_wml_error)
 		/*
 		 * When an exception is thrown which doesn't derive from
 		 * std::exception m will be nullptr pointer.
+		 * When adding a new conditional branch, remember to log the
+		 * error with ERR_LUA or ERR_WML.
 		 */
 		char const *m = lua_tostring(L, -1);
 		if(m) {
@@ -1156,12 +1168,14 @@ bool luaW_pcall(lua_State *L, int nArgs, int nRets, bool allow_wml_error)
 #pragma warning (pop)
 #endif
 					e = em;
+				ERR_LUA << std::string(m, e ? e - m : strlen(m));
 				chat_message("Lua error", std::string(m, e ? e - m : strlen(m)));
 			} else {
 				ERR_LUA << m;
 				chat_message("Lua error", m);
 			}
 		} else {
+			ERR_LUA << "Lua caught unknown exception";
 			chat_message("Lua caught unknown exception", "");
 		}
 		lua_pop(L, 1);

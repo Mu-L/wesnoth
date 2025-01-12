@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2022
+	Copyright (C) 2014 - 2024
 	by Chris Beck <render787@gmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -121,11 +121,11 @@ public:
 	int intf_show_lua_console(lua_State * L);
 protected:
 	// Execute a protected call. Error handler is called in case of an error, using syntax for log_error and throw_exception above. Returns true if successful.
-	bool protected_call(int nArgs, int nRets, error_handler);
+	bool protected_call(int nArgs, int nRets, const error_handler&);
 	// Execute a protected call, taking a lua_State as argument. For functions pushed into the lua environment, this version should be used, or the function cannot be used by coroutines without segfaulting (since they have a different lua_State pointer). This version is called by the above version.
-	static bool protected_call(lua_State * L, int nArgs, int nRets, error_handler);
+	static bool protected_call(lua_State * L, int nArgs, int nRets, const error_handler&);
 	// Load a string onto the stack as a function. Returns true if successful, error handler is called if not.
-	bool load_string(char const * prog, const std::string& name, error_handler);
+	bool load_string(char const * prog, const std::string& name, const error_handler&);
 
 	virtual bool protected_call(int nArgs, int nRets); 	// select default error handler polymorphically
 	virtual bool load_string(char const * prog, const std::string& name);		// select default error handler polymorphically
@@ -138,9 +138,31 @@ protected:
 
 	int intf_kernel_type(lua_State* L);
 
-	virtual int impl_game_config_get(lua_State* L);
-	virtual int impl_game_config_set(lua_State* L);
+	int impl_game_config_get(lua_State* L);
+	int impl_game_config_set(lua_State* L);
+	int impl_game_config_dir(lua_State* L);
 private:
 	static lua_kernel_base*& get_lua_kernel_base_ptr(lua_State *L);
 	std::vector<std::tuple<std::string, std::string>> registered_widget_definitions_;
+};
+
+std::vector<std::string> luaW_get_attributes(lua_State* L, int idx);
+
+struct game_config_tag {
+	lua_kernel_base& ref;
+	game_config_tag(lua_kernel_base& k) : ref(k) {}
+};
+#define GAME_CONFIG_GETTER(name, type, kernel_type) \
+	LATTR_VALID(name, game_config_tag, k) { return dynamic_cast<kernel_type*>(&k.ref) != nullptr; } \
+	LATTR_GETTER(name, type, game_config_tag, k)
+#define GAME_CONFIG_SETTER(name, type, kernel_type) \
+	LATTR_VALID(name, game_config_tag, k) { return dynamic_cast<kernel_type*>(&k.ref) != nullptr; } \
+	LATTR_SETTER(name, type, game_config_tag, k)
+
+template<typename T> struct lua_object_traits;
+template<> struct lua_object_traits<game_config_tag> {
+	inline static auto metatable = "game config";
+	inline static game_config_tag get(lua_State* L, int) {
+		return lua_kernel_base::get_lua_kernel<lua_kernel_base>(L);
+	}
 };

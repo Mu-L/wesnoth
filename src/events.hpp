@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2022
+	Copyright (C) 2003 - 2024
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -80,7 +80,6 @@ public:
 
 	virtual bool requires_event_focus(const SDL_Event * = nullptr) const { return false; }
 
-	virtual void process_help_string(int /*mousex*/, int /*mousey*/) {}
 	virtual void process_tooltip_string(int /*mousex*/, int /*mousey*/) {}
 
 	virtual void join(); /*joins the current event context*/
@@ -151,25 +150,21 @@ void draw();
 inline void pump_and_draw() { pump(); draw(); }
 // TODO: draw_manager - should this also raise_process_event? Some things do some don't
 
-struct pump_info {
-	pump_info() : resize_dimensions(), ticks_(0) {}
-	std::pair<int,int> resize_dimensions;
-	int ticks(unsigned *refresh_counter=nullptr, unsigned refresh_rate=1);
-private:
-	int ticks_; //0 if not calculated
-};
-
 class pump_monitor {
 //pump_monitors receive notification after an events::pump() occurs
 public:
 	pump_monitor();
 	virtual ~pump_monitor();
-	virtual void process(pump_info& info) = 0;
+	virtual void process() = 0;
 };
 
 void raise_process_event();
 void raise_resize_event();
-void raise_help_string_event(int mousex, int mousey);
+/**
+ * Triggered by mouse-motion, sends the cursor position to all handlers to
+ * check whether a tooltip should be shown.
+ */
+void process_tooltip_strings(int mousex, int mousey);
 
 
 /**

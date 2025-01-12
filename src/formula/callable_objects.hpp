@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2022
+	Copyright (C) 2014 - 2024
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include "color.hpp"
 #include "formula/callable.hpp"
 #include "formula/formula.hpp"
 #include "map/location.hpp"
@@ -51,6 +52,7 @@ public:
 	variant get_value(const std::string& key) const override;
 private:
 	const game_events::queued_event& event_info;
+	mutable std::shared_ptr<attack_type> first_weapon, second_weapon;
 };
 
 class terrain_callable : public formula_callable
@@ -191,6 +193,25 @@ public:
 private:
 	const team& team_;
 };
+
+
+class color_callable : public formula_callable
+{
+public:
+	color_callable(color_t clr)
+		: clr_(clr)
+	{}
+
+	void get_inputs(formula_input_vector& inputs) const override;
+	variant get_value(const std::string& key) const override;
+
+	const color_t get_color() const { return clr_; }
+
+private:
+	color_t clr_;
+};
+
+
 
 class set_var_callable : public action_callable
 {

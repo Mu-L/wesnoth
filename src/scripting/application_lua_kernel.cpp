@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2022
+	Copyright (C) 2014 - 2024
 	by Chris Beck <render787@gmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -36,6 +36,7 @@
 #include "scripting/lua_preferences.hpp"
 #include "scripting/plugins/context.hpp"
 #include "scripting/plugins/manager.hpp"
+#include "utils/ranges.hpp"
 
 #ifdef DEBUG_LUA
 #include "scripting/debug_lua.hpp"
@@ -44,15 +45,13 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <thread>
 #include <utility>
 
 #include <functional>
-#include <boost/range/adaptors.hpp>
-#include <SDL2/SDL.h>
 
-#include "lua/lauxlib.h"
+#include "lua/wrapper_lauxlib.h"
 
-struct lua_State;
 
 static lg::log_domain log_scripting_lua("scripting/lua");
 #define DBG_LUA LOG_STREAM(debug, log_scripting_lua)
@@ -89,8 +88,7 @@ static int intf_describe_plugins(lua_State * L)
 
 static int intf_delay(lua_State* L)
 {
-	unsigned int delay = static_cast<unsigned int>(luaL_checkinteger(L, 1));
-	SDL_Delay(delay);
+	std::this_thread::sleep_for(std::chrono::milliseconds{luaL_checkinteger(L, 1)});
 	return 0;
 }
 
@@ -136,7 +134,7 @@ bool application_lua_kernel::thread::is_running() {
 	return started_ ? (lua_status(T_) == LUA_YIELD) : (lua_status(T_) == LUA_OK);
 }
 
-static char * v_threadtableKey = 0;
+static char * v_threadtableKey = nullptr;
 static void * const threadtableKey = static_cast<void *> (& v_threadtableKey);
 
 static lua_State * get_new_thread(lua_State * L)
@@ -225,21 +223,21 @@ struct lua_context_backend {
 	{}
 };
 
-static int impl_context_backend(lua_State * L, std::shared_ptr<lua_context_backend> backend, std::string req_name)
+static int impl_context_backend(lua_State * L, const std::shared_ptr<lua_context_backend>& backend, std::string req_name)
 {
 	if (!backend->valid) {
 		luaL_error(L , "Error, you tried to use an invalid context object in a lua thread");
 	}
 
 	plugins_manager::event evt;
-	evt.name = req_name;
+	evt.name = std::move(req_name);
 	evt.data = luaW_checkconfig(L, -1);
 
 	backend->requests.push_back(evt);
 	return 0;
 }
 
-static int impl_context_accessor(lua_State * L, std::shared_ptr<lua_context_backend> backend, plugins_context::accessor_function func)
+static int impl_context_accessor(lua_State * L, const std::shared_ptr<lua_context_backend>& backend, const plugins_context::accessor_function& func)
 {
 	if (!backend->valid) {
 		luaL_error(L , "Error, you tried to use an invalid context object in a lua thread");
@@ -278,7 +276,7 @@ application_lua_kernel::request_list application_lua_kernel::thread::run_script(
 	// Now we have to create the context object. It is arranged as a table of boost functions.
 	auto this_context_backend = std::make_shared<lua_context_backend>();
 	lua_newtable(T_); // this will be the context table
-	for (const std::string & key : ctxt.callbacks_ | boost::adaptors::map_keys ) {
+	for (const std::string & key : ctxt.callbacks_ | utils::views::keys ) {
 		lua_pushstring(T_, key.c_str());
 		lua_cpp::push_function(T_, std::bind(&impl_context_backend, std::placeholders::_1, this_context_backend, key));
 		lua_settable(T_, -3);

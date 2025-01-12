@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2008 - 2022
+	Copyright (C) 2008 - 2024
 	by Iris Morelle <shadowm2006@gmail.com>
 	Copyright (C) 2003 - 2008 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -89,8 +89,9 @@ public:
 	 *
 	 * @param cfg A config object whose contents are replaced with
 	 *            the server's list if available, cleared otherwise.
+	 * @param icons Whether to have the add-ons server populate the icon
 	 */
-	bool request_addons_list(config& cfg);
+	bool request_addons_list(config& cfg, bool icons);
 
 	/**
 	 * Retrieves the add-ons server web URL if available.
@@ -216,6 +217,16 @@ public:
 	bool using_tls() const
 	{
 		return conn_ && conn_->using_tls();
+	}
+
+	const std::string& server_id() const
+	{
+		return server_id_;
+	}
+
+	const std::string& server_version() const
+	{
+		return server_version_;
 	}
 
 private:

@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2003 - 2022
+	Copyright (C) 2003 - 2024
 	by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -16,7 +16,6 @@
 #pragma once
 
 #include "gettext.hpp"
-#include "map/location.hpp"
 #include "movetype.hpp"
 #include "units/unit_alignments.hpp"
 #include "units/race.hpp"
@@ -31,9 +30,7 @@
 #include <string>
 #include <vector>
 
-class unit_ability_list;
 class unit_animation;
-class game_config_view;
 
 typedef std::map<std::string, movetype> movement_type_map;
 
@@ -121,13 +118,13 @@ public:
 
 	/** Returns two iterators pointing to a range of AMLA configs. */
 	config::const_child_itors modification_advancements() const
-	{ return get_cfg().child_range("advancement"); }
+	{ return advancements_; }
 
 	/**
 	 * Returns a gendered variant of this unit_type.
 	 * @param gender "male" or "female".
 	 */
-	const unit_type& get_gender_unit_type(std::string gender) const;
+	const unit_type& get_gender_unit_type(const std::string& gender) const;
 	/** Returns a gendered variant of this unit_type based on the given parameter. */
 	const unit_type& get_gender_unit_type(unit_race::GENDER gender) const;
 
@@ -188,6 +185,7 @@ public:
 	const std::string& flag_rgb() const;
 
 	const_attack_itors attacks() const;
+	const std::string movement_type_id() const {return movement_type_id_; }
 	const movetype & movement_type() const { return movement_type_; }
 
 	int experience_needed(bool with_acceleration=true) const;
@@ -237,7 +235,7 @@ public:
 	{ return get_cfg().child_or_empty("abilities"); }
 
 	config::const_child_itors advancements() const
-	{ return get_cfg().child_range("advancement"); }
+	{ return advancements_; }
 
 	config::const_child_itors events() const
 	{ return get_cfg().child_range("event"); }
@@ -366,11 +364,13 @@ private:
 	bool zoc_, hide_help_, do_not_list_;
 
 	std::vector<std::string> advances_to_;
+	config::const_child_itors advancements_;
 	int experience_needed_;
 
 
 	unit_alignments::type alignment_;
 
+	std::string movement_type_id_;
 	movetype movement_type_;
 
 	config possible_traits_;
@@ -394,7 +394,17 @@ public:
 	typedef std::map<std::string,unit_type> unit_type_map;
 
 	const unit_type_map &types() const { return types_; }
+	const std::vector<const unit_type*> types_list() const {
+		std::vector<const unit_type*> types_list;
+		for(const auto& i : types()) {
+			// Make sure this unit type is built with the data we need.
+			build_unit_type(i.second, unit_type::FULL);
+			types_list.push_back(&i.second);
+		}
+		return types_list;
+	}
 	const race_map &races() const { return races_; }
+	const movement_type_map &movement_types() const { return movement_types_; }
 	config_array_view traits() const { return units_cfg().child_range("trait"); }
 	void set_config(const game_config_view &cfg);
 
@@ -454,4 +464,8 @@ private:
  *
  * @return the special notes for a unit or unit_type.
  */
-std::vector<t_string> combine_special_notes(const std::vector<t_string> direct, const config& abilities, const_attack_itors attacks, const movetype& mt);
+std::vector<t_string> combine_special_notes(
+	const std::vector<t_string>& direct,
+	const config& abilities,
+	const const_attack_itors& attacks,
+	const movetype& mt);

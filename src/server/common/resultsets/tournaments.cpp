@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2020 - 2022
+	Copyright (C) 2020 - 2024
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
 	This program is free software; you can redistribute it and/or modify
@@ -18,20 +18,20 @@
 
 void tournaments::read(mariadb::result_set_ref rslt)
 {
-    while(rslt->next())
-    {
-        rows.push_back(data{ rslt->get_string("TITLE"), rslt->get_string("STATUS"), rslt->get_string("URL") });
-    }
+	while(rslt->next())
+	{
+		rows.push_back(data{ rslt->get_string("TITLE"), rslt->get_string("STATUS"), rslt->get_string("URL") });
+	}
 }
 
 std::string tournaments::str()
 {
-    std::string text;
-    for(const auto& row : rows)
-    {
-        text += "\nThe tournament "+row.title+" is "+row.status+". More information can be found at "+row.url;
-    }
-    return text;
+	std::string text;
+	for(const auto& row : rows)
+	{
+		text += "\nThe tournament "+row.title+" is "+row.status+". More information can be found at "+row.url;
+	}
+	return text;
 }
 
 #endif //HAVE_MYSQLPP

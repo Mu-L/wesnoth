@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2020 - 2022
+	Copyright (C) 2020 - 2024
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
 	This program is free software; you can redistribute it and/or modify
@@ -23,31 +23,28 @@
 
 class game_history : public rs_base
 {
-    struct player
-    {
-        std::string name;
-        std::string faction;
-    };
+	struct player
+	{
+		std::string name;
+		std::string faction;
+	};
 
-    struct result
-    {
-        std::string game_name;
-        int reload;
-        std::string game_start;
-        std::string scenario_name;
-        std::string scenario_id;
-        std::string era_name;
-        std::string era_id;
-        std::vector<player> players;
-        std::vector<std::string> modification_names;
-        std::vector<std::string> modification_ids;
-        std::string replay_url;
-    };
+	struct result
+	{
+		std::string game_name;
+		std::string game_start;
+		std::string scenario_name;
+		std::string era_name;
+		std::vector<player> players;
+		std::vector<std::string> modification_names;
+		std::string replay_url;
+		std::string version;
+	};
 
-    public:
-        void read(mariadb::result_set_ref rslt);
-        std::unique_ptr<simple_wml::document> to_doc();
+public:
+	void read(mariadb::result_set_ref rslt);
+	std::unique_ptr<simple_wml::document> to_doc();
 
-    private:
-        std::vector<result> results;
+private:
+	std::vector<result> results;
 };
