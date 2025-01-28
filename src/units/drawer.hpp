@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2014 - 2022
+	Copyright (C) 2014 - 2024
 	by Chris Beck <render787@gmail.com>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
 
@@ -25,23 +25,17 @@
 #pragma once
 
 #include "map/location.hpp"
-#include "sdl/rect.hpp"
-#include "utils/math.hpp"
 
-#include <map>
 #include <vector>
 
 class display;
 class display_context;
+struct frame_parameters;
 class gamemap;
 namespace halo { class manager; }
 class team;
 class unit;
 
-struct color_t;
-struct SDL_Rect;
-struct point;
-class surface;
 
 class unit_drawer
 {
@@ -52,10 +46,7 @@ private:
 	display & disp;
 	const display_context & dc;
 	const gamemap & map;
-	const std::vector<team> & teams;
 	halo::manager & halo_man;
-	std::size_t viewing_team;
-	std::size_t playing_team;
 	const team & viewing_team_ref;
 	const team & playing_team_ref;
 	bool is_blindfolded;
@@ -68,27 +59,12 @@ private:
 	int hex_size;
 	int hex_size_by_2;
 
+	/** @todo: better name... unclear what the reachable part actually means */
+	bool selected_or_reachable(const map_location& loc) const;
+
+	void draw_ellipses(const unit& u, const frame_parameters& params) const;
+
 public:
 	/** draw a unit.  */
 	void redraw_unit(const unit & u) const;
-
-private:
-	/** draw a health/xp bar of a unit */
-	void draw_bar(int xpos, int ypos, const map_location& loc,
-		int height, double filled, const color_t& col, uint8_t alpha) const;
-
-	/**
-	 * Find where to draw the bar on an energy bar image.
-	 *
-	 * Results are cached so this can be called frequently.
-	 *
-	 * This looks for a coloured region with significant (>0x10) alpha
-	 * and blackish colour (<0x10 in RGB channels).
-	 */
-	rect calculate_energy_bar(const std::string& bar_image) const;
-
-	/** Scale a rect to the current zoom level. */
-	rect scaled_to_zoom(const rect& r) const;
-	/** Scale a point to the current zoom level. */
-	point scaled_to_zoom(const point& p) const;
 };

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Battle for Wesnoth\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2022-03-20 03:46 UTC\n"
+"POT-Creation-Date: 2024-10-21 16:11 UTC\n"
 "PO-Revision-Date: 2014-06-05 20:47+0700\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese <kde-i18n-doc@kde.org>\n"
@@ -134,7 +134,7 @@ msgstr "Đánh bại Alber"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:46
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/06_Black_Flag.cfg:126
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:24
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:434
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:438
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/08_Silent_Forest.cfg:24
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/09_Shan_Taum_the_Smug.cfg:26
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/10_Saving_Inarix.cfg:49
@@ -158,11 +158,11 @@ msgstr "Kapou’e chết"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/01_End_of_Peace.cfg:56
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/01_End_of_Peace.cfg:64
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/02_The_Human_Army.cfg:76
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:74
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:128
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:96
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:150
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/04_The_Siege_of_Barag_Gor.cfg:57
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/04_The_Siege_of_Barag_Gor.cfg:87
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:72
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:75
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/06_Black_Flag.cfg:23
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/06_Black_Flag.cfg:81
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:72
@@ -180,8 +180,8 @@ msgstr "Kapou’e chết"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:53
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/18_Northern_Alliance.cfg:159
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/19_Epilogue.cfg:19
-#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:81
-#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:95
+#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:83
+#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:97
 msgid "Kapou’e"
 msgstr "Kapou’e"
 
@@ -701,7 +701,7 @@ msgstr "Di chuyển Kapou’e đến cuối vùng núi"
 #. [objectives]
 #. [objective]: condition=win
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:33
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:430
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:434
 msgid "Defeat the enemy leader"
 msgstr "Đánh bại chỉ huy của kẻ thù"
 
@@ -711,7 +711,7 @@ msgstr "Đánh bại chỉ huy của kẻ thù"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:50
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/06_Black_Flag.cfg:130
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:28
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:438
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:442
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/08_Silent_Forest.cfg:28
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/09_Shan_Taum_the_Smug.cfg:30
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/10_Saving_Inarix.cfg:53
@@ -727,17 +727,17 @@ msgid "Death of Grüü"
 msgstr "Grüü chết"
 
 #. [side]: type=Dwarvish Lord, type=Dwarvish Steelclad, id=Kwili
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:88
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:110
 msgid "Kwili"
 msgstr "Kwili"
 
 #. [side]: type=Dwarvish Lord, type=Dwarvish Steelclad, id=Kwili
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:95
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:117
 msgid "Dwarves"
 msgstr "Người lùn"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:149
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:197
 msgid ""
 "We have almost crossed the mountains. We’re close to the lands of the free "
 "tribes. So far so good."
@@ -746,17 +746,17 @@ msgstr ""
 "tự do. Cho đến giờ mọi thứ vẫn ổn."
 
 #. [message]: speaker=Kwili
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:153
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:201
 msgid "Halt! Who goes there?"
 msgstr "Đứng lại! Ai đó?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:158
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:206
 msgid "It is I, Kapou’e, son of the Black-Eye Karun. What do you want, dwarf?"
 msgstr "Là ta, Kapou’e, con trai của Karun Mắt Đen. Ngươi muốn gì, người lùn?"
 
 #. [message]: speaker=Kwili
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:164
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:212
 msgid ""
 "Oh, so it’s another group o’ stinkin’ orcs, eh. Begone, or we shall wash our "
 "axes in yer blood."
@@ -765,7 +765,7 @@ msgstr ""
 "rửa rìu bằng máu của các ngươi."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:169
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:217
 msgid ""
 "Look, you pint-sized idiot, we aren’t out to kill you so why don’t you just "
 "scamper away and hide in a cave or something. We’ll be through here in a few "
@@ -776,12 +776,12 @@ msgstr ""
 "ta sẽ qua đây trong vài giờ nữa."
 
 #. [message]: role=Helper
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:174
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:222
 msgid "(<i>Snicker</i>)"
 msgstr "(<i>Cười khúc khích</i>)"
 
 #. [message]: speaker=Kwili
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:179
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:227
 msgid ""
 "Your scorn and rudeness shall be your undoing. Dwarves, let no orc pass this "
 "way alive!"
@@ -790,12 +790,12 @@ msgstr ""
 "em, đừng để tên người thú nào sống sót qua đây!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:184
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:232
 msgid "It looks like we might have to fight them after all."
 msgstr "Có vẻ rốt cuộc chúng ta cũng phải chiến đấu với chúng."
 
 #. [message]: role=Helper
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:189
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:237
 msgid ""
 "Hey, Chief, I was thinking — dwarves are pretty slow; why don’t we just "
 "bypass them?"
@@ -804,14 +804,14 @@ msgstr ""
 "không bỏ qua chúng?"
 
 #. [message]: role=Helper
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:194
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:242
 msgid "I mean, we could defeat them easily but it would just slow us down."
 msgstr ""
 "Ý tôi là, chúng ta có thể dễ dàng đánh bại chúng nhưng điều đó sẽ chỉ làm "
 "chậm chúng ta."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:199
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:247
 #, fuzzy
 #| msgid ""
 #| "We could, but then again, if we crush them then we can loot their "
@@ -824,16 +824,20 @@ msgstr ""
 "và nhà ở của chúng. Vàng sẽ có ích đấy."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:204
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:252
+#, fuzzy
+#| msgid ""
+#| "Whatever else happens, we have to pass through these mountains and I "
+#| "dislike leaving enemies in our rear. Stab, smite, and slay!"
 msgid ""
 "Whatever else happens, we have to pass through these mountains and I dislike "
-"leaving enemies in our rear. Stab, smite, and slay!"
+"leaving enemies to our rear. Stab, smite, and slay!"
 msgstr ""
 "Dù chuyện gì xảy ra đi nữa, chúng ta cũng phải băng qua vùng núi này và ta "
 "không thích bỏ kẻ thù ở phía sau. Đâm, đập, và giết!"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:220
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:268
 msgid ""
 "I’ve never pushed so far. We are crossing the border of the Black-Eye lands."
 msgstr ""
@@ -841,39 +845,39 @@ msgstr ""
 "của Mắt Đen."
 
 #. [unit]: id=Blemaker, type=Troll Warrior
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:239
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:287
 msgid "Blemaker"
 msgstr "Blemaker"
 
 #. [unit]: id=Grüü, type=Troll Hero
 #. [side]: id=Grüü, type=Great Troll
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:248
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:296
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:80
 msgid "Grüü"
 msgstr "Grüü"
 
 #. [unit]: id=Toughkon, type=Troll Whelp
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:270
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:318
 msgid "Toughkon"
 msgstr "Toughkon"
 
 #. [unit]: id=Pe, type=Troll Whelp
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:279
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:327
 msgid "Pe"
 msgstr "Pe"
 
 #. [message]: speaker=Blemaker
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:289
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:337
 msgid "Look! Dwarves are fighting orcs!"
 msgstr "Nhìn kìa! Người lùn đang chiến đấu với người thú!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:293
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:341
 msgid "Father, we should help them. Orcs are our allies."
 msgstr "Cha ơi, chúng ta nên giúp họ. Người thú là đồng minh của chúng ta."
 
 #. [message]: speaker=Blemaker
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:297
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:345
 msgid ""
 "I don’t know. Orcs have been our allies in the past, but they treat us as "
 "fools."
@@ -882,7 +886,7 @@ msgstr ""
 "đối xử với chúng ta như với những kẻ ngốc."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:301
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:349
 msgid ""
 "But, Father, we don’t know what they are seeking there. Between us, we could "
 "squash these dwarves."
@@ -891,7 +895,7 @@ msgstr ""
 "họ, chúng ta có thể đập bẹp người lùn."
 
 #. [message]: speaker=Blemaker
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:305
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:353
 msgid ""
 "Right, my son. We help our orcish friends. But you take care... I would be "
 "desperate if something happened to you."
@@ -900,22 +904,22 @@ msgstr ""
 "hãy cẩn thận... Ta sẽ vô cùng ân hận nếu có điều gì xảy đến với con."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:319
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:367
 msgid "Father! Oh no!"
 msgstr "Cha! Ôi không!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:323
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:371
 msgid "Filthy dwarves! Now I’ll kill you to the last!"
 msgstr "Bọn người lùn bẩn thỉu! Giờ ta sẽ giết các ngươi đến kẻ cuối cùng!"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:334
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:382
 msgid "Oh no, I’m defeated."
 msgstr "Ôi không, ta đã bị đánh bại."
 
 #. [message]: speaker=Blemaker
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:343
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:391
 msgid ""
 "My son! I should have never brought him to this fight. Now we return to our "
 "caverns, and we never return."
@@ -924,7 +928,7 @@ msgstr ""
 "hang, và không bao giờ trở lại."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:349
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:397
 msgid ""
 "The trolls are done. We will desperately need their help in the coming "
 "battles. Without them there is no hope."
@@ -933,12 +937,12 @@ msgstr ""
 "chiến sắp tới. Không có họ, không còn hy vọng."
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:366
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:414
 msgid "Argh! I die!"
 msgstr "Aaaa! Ta tiêu rồi!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:371
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:419
 #, fuzzy
 #| msgid ""
 #| "You were warned, dwarf. Riders, spread out of the area and collect what "
@@ -958,12 +962,12 @@ msgstr ""
 "theo khi các ngươi xong việc."
 
 #. [message]: role=doggie
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:381
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:429
 msgid "Sounds like fun. All right boys, let’s go!"
 msgstr "Nghe vui đấy. Được rồi mọi người, đi thôi!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:406
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:454
 msgid ""
 "We’ve succeeded! We’ve passed through the Mountains of Haag! Look at these "
 "green hills! The land of the free tribes is near now. I can see the walls of "
@@ -974,7 +978,7 @@ msgstr ""
 "thể thấy tường thành của Barag Gór ở đằng xa."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:426
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:474
 #, fuzzy
 #| msgid ""
 #| "Blemaker, many thanks for your help in this fight. Would you like to join "
@@ -990,12 +994,12 @@ msgstr ""
 "Ông là một chiến binh mạnh mẽ, và ông sẽ giúp ích rất nhiều."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:431
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:479
 msgid "Father, I’d like to join them. Would you mind it?"
 msgstr "Cha ơi, con muốn tham gia cùng họ. Cha đồng ý chứ?"
 
 #. [message]: speaker=Blemaker
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:435
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:483
 msgid ""
 "My son, you’re old enough to discover the world. Me, I have to stay here. "
 "But take care, there are plenty of creatures that seek our end, like elves "
@@ -1006,12 +1010,12 @@ msgstr ""
 "tiên và con người. Chúng rất thông minh và tàn nhẫn."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:439
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:487
 msgid "Thanks, father. Don’t worry, I’ll take care of myself."
 msgstr "Cảm ơn cha. Đừng lo, con sẽ tự lo được cho mình."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:445
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:493
 msgid ""
 "Grüü, many thanks for your help in this fight. I’m sorry for the loss of "
 "your father. Would you like to join us in our journey? Your help would be "
@@ -1022,7 +1026,7 @@ msgstr ""
 "hành trình này không? Sự giúp đỡ của cậu sẽ rất hữu ích đối với tôi."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:449
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/03_Toward_Mountains_of_Haag.cfg:497
 msgid ""
 "My father would have come to help you. I would insult his memory not to help "
 "you. I come!"
@@ -1049,7 +1053,7 @@ msgstr "Đánh bại tất cả các chỉ huy của kẻ thù"
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/04_The_Siege_of_Barag_Gor.cfg:35
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:54
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:32
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:442
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:446
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/08_Silent_Forest.cfg:32
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/09_Shan_Taum_the_Smug.cfg:34
 msgid "Death of a Shaman"
@@ -1073,7 +1077,7 @@ msgstr "Etheliel"
 #. [side]: type=Elvish Marshal, id=Hida'tul
 #. [side]: type=Elvish Marshal, id=Ammon
 #. [side]: type=Elvish Marshal, id=Sammual
-#. [side]: type=Elvish Sharpshooter, id=Lucile
+#. [side]: type=Elvish Sharpshooter, gender=female, id=Lucile
 #. [side]: type=Elvish Captain, id=Raceme
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/04_The_Siege_of_Barag_Gor.cfg:69
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/04_The_Siege_of_Barag_Gor.cfg:102
@@ -1450,24 +1454,24 @@ msgid "To the Harbor of Tirigaz"
 msgstr "Đến cảng Tirigaz"
 
 #. [side]: type=Lich, id=Na-Mana
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:80
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:83
 msgid "Na-Mana"
 msgstr "Na-Mana"
 
 #. [side]: type=Lich, id=Na-Mana
 #. [side]: type=Death Knight, id=Ma-Rana
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:83
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:112
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:86
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:115
 msgid "Undead"
 msgstr "Ma quái"
 
 #. [side]: type=Death Knight, id=Ma-Rana
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:109
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:112
 msgid "Ma-Rana"
 msgstr "Ma-Rana"
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:126
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:129
 #, fuzzy
 #| msgid ""
 #| "Kapou’e and the shamans rested and discussed the matter for three days. "
@@ -1486,7 +1490,7 @@ msgstr ""
 "phải tập hợp."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:132
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:135
 #, fuzzy
 #| msgid ""
 #| "Since it was now obvious that the humans were going to try their best to "
@@ -1504,7 +1508,7 @@ msgstr ""
 "Tirigaz, nơi các thành viên còn lại của hội đồng đang ở."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:138
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:141
 #, fuzzy
 #| msgid ""
 #| "Leaving most of his people at Barag Gór, Kapou’e, accompanied by the "
@@ -1517,28 +1521,28 @@ msgstr ""
 "binh lính của mình lên đường đến Tirigaz."
 
 #. [message]: speaker=narrator
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:186
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:189
 msgid ""
 "A couple of days into their journey, the party halted to rest for the night."
 msgstr "Sau vài ngày đường, đội quân dừng lại để nghỉ qua đêm."
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:192
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:195
 msgid "Ahhh, I’m so tired. It was a good idea to halt in such a quiet place."
 msgstr "Ààà, tôi mệt quá. Thật hay khi dừng lại ở một nơi yên ắng như thế này."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:196
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:199
 msgid "It is too quiet. Just plain boring."
 msgstr "Quá yên ắng. Thật nhàm chán."
 
 #. [message]: speaker=Pirk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:200
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:203
 msgid "Shut up, I just heard something."
 msgstr "Im nào, tôi vừa nghe thấy thứ gì đó."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:204
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:207
 msgid ""
 "You’re right. I can see something is moving in these hills. Looks like there "
 "are undead there."
@@ -1547,22 +1551,22 @@ msgstr ""
 "như ở đó có ma quái."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:225
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:228
 msgid "Excellent! It is time for exercise!"
 msgstr "Tuyệt vời! Đến lúc tập luyện rồi!"
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:230
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:233
 msgid "Uh... I don’t think so. Let’s get out of here!"
 msgstr "Ờ... tôi không nghĩ vậy đâu. Chúng ta hãy ra khỏi đây!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:235
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:238
 msgid "No way! Grüü want to crush some undead."
 msgstr "Không đời nào! Grüü muốn đập một vài tên ma quái."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:240
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:243
 #, fuzzy
 #| msgid ""
 #| "Grüü is right. It is not wise to let these undead remain here cutting off "
@@ -1571,7 +1575,7 @@ msgstr "Không đời nào! Grüü muốn đập một vài tên ma quái."
 msgid ""
 "Grüü is right. It is not wise to let these undead remain here, cutting off "
 "our supply lines and path of retreat. In these days of turmoil, we don’t "
-"know what lies ahead, so it is best not to leave any threats in our rear."
+"know what lies ahead, so it is best not to leave any threats to our rear."
 msgstr ""
 "Grüü nói đúng đấy. Để lũ ma quái ở đây cắt nguồn tiếp tế và đường rút lui "
 "của chúng ta không phải là điều khôn ngoan. Vào những ngày rối loạn như thế "
@@ -1579,12 +1583,12 @@ msgstr ""
 "lại bất kỳ mối đe dọa nào sau lưng chúng ta."
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:245
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:248
 msgid "But..."
 msgstr "Nhưng..."
 
 #. [message]: speaker=Gork
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:250
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:253
 msgid ""
 "Hush, Vraurk, we must trust the Son of the Black-Eye in these matters, for "
 "he is far more cunning in them than we are."
@@ -1593,43 +1597,43 @@ msgstr ""
 "mẹo trong những vấn đề này hơn chúng ta rất nhiều."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:255
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:258
 msgid "That’s right, let’s go!"
 msgstr "Đúng thế, đi thôi!"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:269
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:274
 msgid "Hmmm, what a neat bottle! What is it?"
 msgstr "Hừm, một cái chai thật tinh xảo! Cái gì đây?"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:273
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:278
 msgid "It is written H.O.L.Y W.A.T.E.R"
 msgstr "Nó ghi là N.Ư.Ớ.C T.H.Á.N.H"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:277
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:282
 msgid "I’m thirsty... <i>Gulp gulp</i>"
 msgstr "Mình đang khát ... <i>Ực ực</i>"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:282
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:287
 msgid "Ahhh, that was yummy!"
 msgstr "À, ngon tuyệt!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:296
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:301
 msgid "The day is coming, these night creatures will soon return to the pit."
 msgstr ""
 "Trời sắp sáng, những sinh vật bóng đêm đó sẽ sớm trở về hang ổ của chúng."
 
 #. [message]: speaker=Pirk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:300
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:305
 msgid "Grüü, are you forgetting we are also night creatures?"
 msgstr "Grüü, cậu quên chúng ta cũng là những sinh vật bóng đêm rồi sao?"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:304
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/05_To_the_Harbor_of_Tirigaz.cfg:309
 msgid "Err... well..."
 msgstr "Ờ... phải..."
 
@@ -1755,12 +1759,20 @@ msgstr ""
 
 #. [message]: speaker=Kapou'e
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/06_Black_Flag.cfg:243
+#, fuzzy
+#| msgid ""
+#| "Wise decision. We have actually come to speak to the shamans, but while "
+#| "we are here we must help you out of this scrape. Grüü, hold them while I "
+#| "run to the keep and organize our forces to counterattack. We can’t defeat "
+#| "them by sea without ships, but we can destroy the foothold they have "
+#| "gained on the land."
 msgid ""
 "Wise decision. We have actually come to speak to the shamans, but while we "
-"are here we must help you out of this scrape. Grüü, hold them while I run to "
-"the keep and organize our forces to counterattack. We can’t defeat them by "
-"sea without ships, but we can destroy the foothold they have gained on the "
-"land."
+"are here we must help you out of this scrape. Grüü, fight the humans if you "
+"must, but don’t be reckless. Getting me to the Tirigaz keep so I can rally "
+"our forces for the counterattack must be our first priority. And, I need you "
+"to stay alive. We can’t defeat them by sea without ships, but we can destroy "
+"the foothold they have gained on the land."
 msgstr ""
 "Quyết định khôn ngoan đấy. Thực sự bọn ta đến để nói chuyện với các pháp sư, "
 "nhưng chừng nào còn ở đây, bọn ta sẽ giúp các ngươi thoát khỏi tình trạng "
@@ -1895,7 +1907,7 @@ msgid "Villains"
 msgstr "Kẻ ác"
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:114
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:118
 msgid ""
 "Resting during the day and doing most of their marching by night, the party "
 "moved steadily through the sand for two days."
@@ -1904,7 +1916,7 @@ msgstr ""
 "đều đều qua cát trong hai ngày."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:120
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:124
 msgid ""
 "The heat of the day and the chill of the night wore heavily on the orcs. "
 "Fortunately, they didn’t encounter any giant scorpions, but neither did they "
@@ -1915,7 +1927,7 @@ msgstr ""
 "được nguồn thức ăn hay nước uống."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:126
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:130
 msgid ""
 "By the dawn of the third day the party was hungry, tired and weary, but "
 "according to their map, a good-sized oasis was not far away."
@@ -1924,7 +1936,7 @@ msgstr ""
 "dựa theo bản đồ, một ốc đảo lớn ở cách đó không xa."
 
 #. [part]
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:132
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:136
 msgid ""
 "Just then, however, a strong wind began to blow. It rapidly increased in "
 "fury, whipping hot sand up all around them. They could see little further "
@@ -1936,12 +1948,12 @@ msgstr ""
 "tay, và có vẻ họ sắp bị chôn sống trong cát mù mịt."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:161
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:165
 msgid "Ack! This blasted sand!"
 msgstr "Ặc! Thứ cát đáng nguyền rủa!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:166
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:170
 msgid ""
 "I’m hungry and we found no giant scorpion yet. I’m sure it would be tasty."
 msgstr ""
@@ -1949,7 +1961,7 @@ msgstr ""
 "chắc chắn chúng rất ngon."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:170
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:174
 msgid ""
 "I hope we won’t find one! They are terrible armored beasts; your hammer "
 "would be useless against their heavy shells."
@@ -1958,7 +1970,7 @@ msgstr ""
 "áo giáp, búa của cậu cũng vô dụng trước lớp vỏ dày của chúng."
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:174
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:178
 msgid ""
 "I’ve been told the best way to defeat them is to attack their eyes with "
 "sharp blades, set them afire, or pierce them with arrows. But I hope too we "
@@ -1969,7 +1981,7 @@ msgstr ""
 "cũng hy vọng chúng ta sẽ không phải gặp chúng."
 
 #. [message]: speaker=Pirk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:178
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:182
 #, fuzzy
 #| msgid ""
 #| "I wouldn’t worry about the scorpions right now, I would worry about "
@@ -1985,17 +1997,17 @@ msgstr ""
 "sống trong cát thì chúng ta cũng sẽ chết vì đói và khát."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:182
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:186
 msgid "Hurry then, break camp, we must get to the oasis!"
 msgstr "Mau lên, dỡ trại, chúng ta phải đến được ốc đảo!"
 
 #. [message]: speaker=Pirk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:187
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:191
 msgid "What?! Through all this chaos?!"
 msgstr "Cái gì?! Qua tất cả mớ hỗn độn này sao?!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:192
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:196
 #, fuzzy
 #| msgid "We don’t have any other choice. If we remain here we’ll die."
 msgid "We don’t have any other choice. If we remain here, we’ll die."
@@ -2004,7 +2016,7 @@ msgstr ""
 "chết."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:216
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:220
 msgid ""
 "Finally we’ve done it! Now let’s wait out this sandstorm, resupply and get "
 "some rest before we continue on our journey."
@@ -2013,64 +2025,64 @@ msgstr ""
 "tái tiếp tế và và nghỉ ngơi một chút trước khi tiếp tục hành trình."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:284
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:288
 msgid "There you go, Grüü, there is your giant scorpion!"
 msgstr "Của cậu đấy Grüü, có bọ cạp khổng lồ của cậu đấy!"
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:289
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:293
 msgid "Oh great, perfect timing."
 msgstr "Ồ tuyệt, thật đúng lúc."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:294
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:298
 msgid "Yeah, I am really hungry."
 msgstr "Đúng thế, tôi đói lắm rồi."
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:299
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:303
 msgid "That is not what I meant!"
 msgstr "Đó không phải ý tôi muốn nói!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:316
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:320
 msgid "Ahh, finally! Lunchtime!"
 msgstr "À, cuối cùng! Đến giờ ăn rồi!"
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:321
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:325
 msgid "You trolls are just sick!"
 msgstr "Quỷ núi các cậu thật kinh dị!"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:326
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:330
 msgid "<i>Yuck</i>! Disgusting! These things taste horrible!"
 msgstr "<i>Oẹ</i>! Tởm quá! Những thứ này có vị thật kinh khủng!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:331
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:335
 msgid ""
 "I don’t know if you should have eaten that, Grüü, you don’t look so good."
 msgstr ""
 "Tôi không biết cậu có nên ăn thứ đó không, Grüü, cậu trông có vẻ không ổn."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:336
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:340
 msgid "Ugh... I feel sick."
 msgstr "Oẹ... tôi cảm thấy khó chịu."
 
 #. [message]: speaker=Gork
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:341
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:345
 msgid "Hmmm, it seems that scorpions are poisonous."
 msgstr "Hừm, có vẻ như bọn bọ cạp có chất độc."
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:346
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:350
 msgid "But what about Grüü?"
 msgstr "Còn Grüü thì sao?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:351
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:355
 msgid ""
 "Ahh, he will be fine in a few minutes. He is a troll, after all. Right, Grüü?"
 msgstr ""
@@ -2078,12 +2090,12 @@ msgstr ""
 "không, Grüü?"
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:356
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:360
 msgid "(<i>Puke</i>)"
 msgstr "(<i>Nôn ói</i>)"
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:404
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:408
 msgid ""
 "Hold it right there! This oasis is ours! Begone or you all will be killed!"
 msgstr ""
@@ -2091,7 +2103,7 @@ msgstr ""
 "chết!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:409
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:413
 msgid ""
 "Look, fool, we are in the middle of a sandstorm, and we are almost "
 "completely out of food and water. There is no way we can keep going without "
@@ -2102,17 +2114,17 @@ msgstr ""
 "đảo này."
 
 #. [message]: speaker=unit
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:414
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:418
 msgid "I don’t care, get lost!"
 msgstr "Ta không quan tâm, cứ việc đi lạc đi!"
 
 #. [message]: speaker=Pirk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:419
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:423
 msgid "It’s no use reasoning with them, Kapou’e, they aren’t going to listen."
 msgstr "Giải thích với chúng chẳng có ích gì, Kapou’e, chúng không nghe đâu."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:424
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:428
 msgid ""
 "Yeah, I can see that. Well, I guess we have to clean these rabble out of "
 "here."
@@ -2121,22 +2133,22 @@ msgstr ""
 "tiện dân này khỏi đây."
 
 #. [message]: speaker=Grüü
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:460
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:464
 msgid "... Food...!"
 msgstr "... Thức ăn...!"
 
 #. [message]: speaker=Vraurk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:465
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:469
 msgid "... Water...!"
 msgstr "... Nước uống...!"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:470
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:474
 msgid "... Come... on..., people...! We have... to... keep... going..."
 msgstr "... Mọi người..., cố... lên...! Chúng ta... phải... đi... tiếp..."
 
 #. [message]: speaker=Pirk
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:475
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/07_The_Desert_of_Death.cfg:479
 msgid "... Can’t... The... heat... is... too... much..."
 msgstr "... Không thể... Sức... nóng... quá... khủng khiếp..."
 
@@ -2150,7 +2162,7 @@ msgstr "Khu rừng Yên Lặng"
 msgid "Defeat the elves"
 msgstr "Đánh bại thần tiên"
 
-#. [side]: type=Elvish Sharpshooter, id=Lucile
+#. [side]: type=Elvish Sharpshooter, gender=female, id=Lucile
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/08_Silent_Forest.cfg:76
 msgid "Lucile"
 msgstr "Lucile"
@@ -3962,7 +3974,7 @@ msgstr "Ném hắn xuống hồ. Nếu hắn đóng băng đến chết thì t�
 
 #. [message]
 #: data/campaigns/Son_Of_The_Black_Eye/scenarios/14_Back_Home.cfg:767
-msgid "You retrieve $amount_gold of Grüü's leftover gold."
+msgid "You retrieve $amount_gold of Grüü’s leftover gold."
 msgstr ""
 
 #. [scenario]: id=15_Civil_War
@@ -4408,7 +4420,7 @@ msgid "What! Fight like an orc, you gutless coward!"
 msgstr "Cái gì! Hãy chiến đấu như một người thú, đồ hèn nhát nhu nhược!"
 
 #. [message]: role=Helper
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:289
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:292
 msgid ""
 "Hey Chief, it’s pretty odd. Shan Taum doesn’t seem to have too many of his "
 "men around. He was given control of half the Great Horde. Do you think they "
@@ -4419,7 +4431,7 @@ msgstr ""
 "đã bỏ rơi hắn không?"
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:294
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:297
 #, fuzzy
 #| msgid ""
 #| "I doubt it. Shan Taum knows how to dissemble. I’ll bet he sent them out "
@@ -4435,7 +4447,7 @@ msgstr ""
 "cũng sẽ có lợi cho chúng ta."
 
 #. [message]: speaker=Kapou'e
-#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:303
+#: data/campaigns/Son_Of_The_Black_Eye/scenarios/16_The_Coward.cfg:306
 msgid ""
 "Good, we crushed this pocket of resistance too. Now where in the world did "
 "that coward Shan Taum run off to?"
@@ -5102,74 +5114,6 @@ msgstr ""
 "chí còn trở nên nổi tiếng hơn Kapou’e. Những câu chuyện về lòng dũng cảm và "
 "mưu mẹo của cậu đã lan xa đến tận Wesnoth."
 
-#. [unit_type]: id=Novice Orcish Shaman, race=orc
-#: data/campaigns/Son_Of_The_Black_Eye/units/Novice_Orcish_Shaman.cfg:4
-msgid "Novice Orcish Shaman"
-msgstr "Pháp sư người thú học việc"
-
-#. [unit_type]: id=Novice Orcish Shaman, race=orc
-#: data/campaigns/Son_Of_The_Black_Eye/units/Novice_Orcish_Shaman.cfg:20
-#, fuzzy
-#| msgid ""
-#| "Orcish Shamans are the guardians of orcish magic. Respected among orcish "
-#| "tribes, they form the Orcish Council, which makes important decisions for "
-#| "the whole Orcish community and arbitrates the many conflicts that arise "
-#| "between tribes of this argumentative race. Although physically weak (for "
-#| "Orcs), Orcish Shamans are good spell casters and can curse their enemies, "
-#| "draining their life. Novice Shamans are still young and vigorous, but "
-#| "their spell-casting ability still needs improvement."
-msgid ""
-"Orcish Shamans are the guardians of orcish magic. Respected among orcish "
-"tribes, they form the Orcish Council, which makes important decisions for "
-"the whole Orcish community and arbitrates the many conflicts that arise "
-"between tribes of this argumentative race. Although physically weak (for "
-"orcs), Orcish Shamans are good spell casters and can curse their enemies, "
-"draining their life. Novice Shamans are still young and vigorous, but their "
-"spell-casting ability still needs improvement."
-msgstr ""
-"Pháp sư người thú là những người bảo vệ phép thuật của người thú. Được kính "
-"trọng trong bộ lạc, họ tạo thành Hội đồng người thú, đưa ra những quyết định "
-"quan trọng cho toàn bộ cộng đồng người thú và phân xử nhiều xung đột nảy "
-"sinh giữa các bộ lạc của chủng tộc hiếu chiến này. Mặc dù yếu về thể chất "
-"(đối với người thú), các pháp sư người thú là những người làm phép giỏi và "
-"có thể nguyền rủa kẻ thù, bòn rút sinh lực của chúng. Pháp sư người thú học "
-"việc vẫn còn trẻ và mạnh khỏe, nhưng khả năng làm phép của họ vẫn cần cải "
-"tiến."
-
-#. [unit_type]: id=Old Orcish Shaman, race=orc
-#: data/campaigns/Son_Of_The_Black_Eye/units/Old_Orcish_Shaman.cfg:4
-msgid "Old Orcish Shaman"
-msgstr "Pháp sư người thú già"
-
-#. [unit_type]: id=Old Orcish Shaman, race=orc
-#: data/campaigns/Son_Of_The_Black_Eye/units/Old_Orcish_Shaman.cfg:20
-#, fuzzy
-#| msgid ""
-#| "Orcish Shamans are the guardians of orcish magic. Respected among orcish "
-#| "tribes, they form the Orcish Council, which makes important decisions for "
-#| "the whole Orcish community and arbitrates the many conflicts that arise "
-#| "between tribes of this argumentative race. Although physically weak (for "
-#| "Orcs), Orcish Shamans are good spell casters and can curse their enemies, "
-#| "draining their life. Old Orcish Shamans are shamans that have mastered "
-#| "magic, although their physical strength has declined with age."
-msgid ""
-"Orcish Shamans are the guardians of orcish magic. Respected among orcish "
-"tribes, they form the Orcish Council, which makes important decisions for "
-"the whole Orcish community and arbitrates the many conflicts that arise "
-"between tribes of this argumentative race. Although physically weak (for "
-"orcs), Orcish Shamans are good spell casters and can curse their enemies, "
-"draining their life. Old Orcish Shamans are shamans that have mastered "
-"magic, although their physical strength has declined with age."
-msgstr ""
-"Pháp sư người thú là những người bảo vệ phép thuật của người thú. Được kính "
-"trọng trong bộ lạc, họ tạo thành Hội đồng người thú, đưa ra những quyết định "
-"quan trọng cho toàn bộ cộng đồng người thú và phân xử nhiều xung đột nảy "
-"sinh giữa các bộ lạc của chủng tộc hiếu chiến này. Mặc dù yếu về thể chất "
-"(đối với người thú), các pháp sư người thú là những người làm phép giỏi và "
-"có thể nguyền rủa kẻ thù, bòn rút sinh lực của chúng. Pháp sư người thú già "
-"là các pháp sư thành thạo phép thuật, mặc dù sức mạnh thể chất của họ đã suy "
-"sụp cùng với tuổi tác."
-
 #. [unit_type]: id=Orcish Shaman, race=orc
 #: data/campaigns/Son_Of_The_Black_Eye/units/Orcish_Shaman.cfg:4
 msgid "Orcish Shaman"
@@ -5199,6 +5143,74 @@ msgstr ""
 "sinh giữa các bộ lạc của chủng tộc hiếu chiến này. Mặc dù yếu về thể chất "
 "(đối với người thú), các pháp sư người thú là những người làm phép giỏi và "
 "có thể nguyền rủa kẻ thù, bòn rút sinh lực của chúng."
+
+#. [variation]
+#: data/campaigns/Son_Of_The_Black_Eye/units/Orcish_Shaman.cfg:104
+msgid "variation^Novice"
+msgstr ""
+
+#. [variation]
+#: data/campaigns/Son_Of_The_Black_Eye/units/Orcish_Shaman.cfg:108
+#, fuzzy
+#| msgid ""
+#| "Orcish Shamans are the guardians of orcish magic. Respected among orcish "
+#| "tribes, they form the Orcish Council, which makes important decisions for "
+#| "the whole Orcish community and arbitrates the many conflicts that arise "
+#| "between tribes of this argumentative race. Although physically weak (for "
+#| "Orcs), Orcish Shamans are good spell casters and can curse their enemies, "
+#| "draining their life. Novice Shamans are still young and vigorous, but "
+#| "their spell-casting ability still needs improvement."
+msgid ""
+"Orcish Shamans are the guardians of orcish magic. Respected among orcish "
+"tribes, they form the Orcish Council, which makes important decisions for "
+"the whole Orcish community and arbitrates the many conflicts that arise "
+"between tribes of this argumentative race. Although physically weak (for "
+"orcs), Orcish Shamans are good spell casters and can curse their enemies, "
+"draining their life. Novice Shamans are still young and vigorous, but their "
+"spell-casting ability still needs improvement."
+msgstr ""
+"Pháp sư người thú là những người bảo vệ phép thuật của người thú. Được kính "
+"trọng trong bộ lạc, họ tạo thành Hội đồng người thú, đưa ra những quyết định "
+"quan trọng cho toàn bộ cộng đồng người thú và phân xử nhiều xung đột nảy "
+"sinh giữa các bộ lạc của chủng tộc hiếu chiến này. Mặc dù yếu về thể chất "
+"(đối với người thú), các pháp sư người thú là những người làm phép giỏi và "
+"có thể nguyền rủa kẻ thù, bòn rút sinh lực của chúng. Pháp sư người thú học "
+"việc vẫn còn trẻ và mạnh khỏe, nhưng khả năng làm phép của họ vẫn cần cải "
+"tiến."
+
+#. [variation]
+#: data/campaigns/Son_Of_The_Black_Eye/units/Orcish_Shaman.cfg:133
+msgid "variation^Elder"
+msgstr ""
+
+#. [variation]
+#: data/campaigns/Son_Of_The_Black_Eye/units/Orcish_Shaman.cfg:137
+#, fuzzy
+#| msgid ""
+#| "Orcish Shamans are the guardians of orcish magic. Respected among orcish "
+#| "tribes, they form the Orcish Council, which makes important decisions for "
+#| "the whole Orcish community and arbitrates the many conflicts that arise "
+#| "between tribes of this argumentative race. Although physically weak (for "
+#| "Orcs), Orcish Shamans are good spell casters and can curse their enemies, "
+#| "draining their life. Old Orcish Shamans are shamans that have mastered "
+#| "magic, although their physical strength has declined with age."
+msgid ""
+"Orcish Shamans are the guardians of orcish magic. Respected among orcish "
+"tribes, they form the Orcish Council, which makes important decisions for "
+"the whole Orcish community and arbitrates the many conflicts that arise "
+"between tribes of this argumentative race. Although physically weak (for "
+"orcs), Orcish Shamans are good spell casters and can curse their enemies, "
+"draining their life. Old Orcish Shamans are shamans that have mastered "
+"magic, although their physical strength has declined with age."
+msgstr ""
+"Pháp sư người thú là những người bảo vệ phép thuật của người thú. Được kính "
+"trọng trong bộ lạc, họ tạo thành Hội đồng người thú, đưa ra những quyết định "
+"quan trọng cho toàn bộ cộng đồng người thú và phân xử nhiều xung đột nảy "
+"sinh giữa các bộ lạc của chủng tộc hiếu chiến này. Mặc dù yếu về thể chất "
+"(đối với người thú), các pháp sư người thú là những người làm phép giỏi và "
+"có thể nguyền rủa kẻ thù, bòn rút sinh lực của chúng. Pháp sư người thú già "
+"là các pháp sư thành thạo phép thuật, mặc dù sức mạnh thể chất của họ đã suy "
+"sụp cùng với tuổi tác."
 
 #. [message]: speaker=unit
 #: data/campaigns/Son_Of_The_Black_Eye/utils/deaths.cfg:17
@@ -5238,18 +5250,24 @@ msgstr ""
 "Khốn kiếp, không có Inarix dẫn dắt thằn lằn, chúng ta không thể trông mong "
 "vào sự giúp đỡ của họ được nữa."
 
-#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:74
+#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:76
 msgid "Al’Brock"
 msgstr "Al’Brock"
 
-#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:88
+#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:90
 msgid "Flar’Tar"
 msgstr "Flar’Tar"
 
 #. [note]
-#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:101
+#: data/campaigns/Son_Of_The_Black_Eye/utils/utils.cfg:103
 msgid "The Great Horde: upkeep cost of every unit decreased by one."
 msgstr "Đại Binh đoàn: chi phí bảo trì của mọi đơn vị giảm đi một."
+
+#~ msgid "Novice Orcish Shaman"
+#~ msgstr "Pháp sư người thú học việc"
+
+#~ msgid "Old Orcish Shaman"
+#~ msgstr "Pháp sư người thú già"
 
 #~ msgid ""
 #~ "In this scenario, you may ask Grüü to move to any hex by right-clicking "

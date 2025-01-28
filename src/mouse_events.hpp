@@ -1,5 +1,5 @@
 /*
-	Copyright (C) 2006 - 2022
+	Copyright (C) 2006 - 2024
 	by Joerg Hinrichs <joerg.hinrichs@alice-dsl.de>
 	Copyright (C) 2003 by David White <dave@whitevine.net>
 	Part of the Battle for Wesnoth Project https://www.wesnoth.org/
@@ -26,7 +26,6 @@
 #include <vector>                       // for vector
 #include <SDL2/SDL_events.h>                 // for SDL_MouseButtonEvent
 
-class game_display;
 class battle_context;  // lines 23-23
 class play_controller;
 class team;
@@ -63,7 +62,7 @@ public:
 
 	unit_map::iterator selected_unit();
 
-	pathfind::marked_route get_route(const unit* un, map_location go_to, team &team) const;
+	pathfind::marked_route get_route(const unit* un, map_location go_to, const team &team) const;
 
 	const pathfind::marked_route& get_current_route() const { return current_route_; }
 
@@ -81,13 +80,16 @@ public:
 
 	void select_hex(const map_location& hex, const bool browse,
 		const bool highlight = true,
-		const bool fire_event = true);
+		const bool fire_event = true,
+		const bool force_unhighlight = false);
 
-	void move_action(bool browse);
+	void move_action(bool browse) override;
+	void teleport_action();
 
-	void touch_action(const map_location hex, bool browse);
+	void touch_action(const map_location hex, bool browse) override;
 
 	void select_or_action(bool browse);
+	void select_teleport();
 
 	/**
 	 * Uses SDL and @ref game_display::hex_clicked_on
@@ -119,26 +121,27 @@ protected:
 	 * Due to the way this class is constructed we can assume that the
 	 * display* gui_ member actually points to a game_display (derived class)
 	 */
-	game_display& gui() { return *gui_; }
+	game_display& gui() override { return *gui_; }
 	/** Const version */
-	const game_display& gui() const { return *gui_; }
+	const game_display& gui() const override { return *gui_; }
 
-	int drag_threshold() const;
+	int drag_threshold() const override;
 	/**
 	 * Use update to force an update of the mouse state.
 	 */
-	void mouse_motion(int x, int y, const bool browse, bool update=false, map_location loc = map_location::null_location());
-	bool right_click_show_menu(int x, int y, const bool browse);
+	void mouse_motion(int x, int y, const bool browse, bool update=false, map_location loc = map_location::null_location()) override;
+	bool mouse_button_event(const SDL_MouseButtonEvent& event, uint8_t button, map_location loc, bool click = false) override;
+	bool right_click_show_menu(int x, int y, const bool browse) override;
 //	bool left_click(int x, int y, const bool browse);
 	bool move_unit_along_current_route();
 
-	void touch_motion(int x, int y, const bool browse, bool update=false, map_location loc = map_location::null_location());
+	void touch_motion(int x, int y, const bool browse, bool update=false, map_location loc = map_location::null_location()) override;
 
 	void save_whiteboard_attack(const map_location& attacker_loc, const map_location& defender_loc, int weapon_choice);
 
 	// fill weapon choices into bc_vector
 	// return the best weapon choice
-	int fill_weapon_choices(std::vector<battle_context>& bc_vector, unit_map::iterator attacker, unit_map::iterator defender);
+	int fill_weapon_choices(std::vector<battle_context>& bc_vector, const unit_map::iterator& attacker, const unit_map::iterator& defender);
 	// the real function but can throw bad_alloc
 	// choice is the attack chosen in the attack dialog
 	void attack_enemy_(const map_location& attacker_loc
@@ -154,10 +157,8 @@ protected:
 	 */
 	unit* find_unit_nonowning(const map_location& hex);
 	const unit* find_unit_nonowning(const map_location& hex) const;
-	bool unit_in_cycle(unit_map::const_iterator it);
+	bool unit_in_cycle(const unit_map::const_iterator& it);
 private:
-	team& viewing_team();
-	const team& viewing_team() const;
 	team &current_team();
 
 	// Some common code from mouse_motion and touch_motion.
@@ -192,6 +193,7 @@ private:
 	bool over_route_;
 	bool reachmap_invalid_;
 	bool show_partial_move_;
+	bool teleport_selected_;
 
 	static mouse_handler * singleton_;
 
